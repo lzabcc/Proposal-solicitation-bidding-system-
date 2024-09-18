@@ -1,9 +1,7 @@
-﻿
-﻿
-﻿
-Project Overview
+﻿Project Overview
+ 
 This project aims to develop a tender management system that facilitates the entire tendering process online, simplifying traditionally complex offline workflows. The system is designed to support multiple roles including administrators, tender issuers, suppliers, and experts, each having distinct functionalities tailored to their roles.
-﻿
+
 Key Features
 Tender Issuing: Allows tender issuers to post tenders, manage bids, and select winners.
 Supplier Bidding: Enables suppliers to review tenders and submit their proposals.
@@ -15,16 +13,19 @@ The project was executed through the following stages:
 Analysis and Design:
 Conducted thorough research to understand the requirements of each role involved in the tender process.
 Designed the database schema and frontend mockups to ensure usability and functionality.
+
 Development:
 Developed backend services using Java with the SSM (Spring, Spring MVC, MyBatis) framework.
 Implemented frontend interfaces using JSTL, Layui, and Echart libraries.
 Integrated Alibaba Cloud Toolkit for deployment and Tencent Cloud SMS for messaging services.
 Constructed database tables to store tender details, user information, system messages, etc.
+
 Testing:
 Rigorously tested each module to ensure reliability and functionality.
 Conducted live demonstrations to validate the system's performance.
 Deployment:
 Deployed the application on Alibaba Cloud, ensuring accessibility and scalability.
+
 Key Technologies Used
 Backend: Java (SSM Framework)
 Frontend: JSTL, Layui, Echart
@@ -38,8 +39,6 @@ Administrator Interface: Features include user account management, tender approv
 Tender Issuer Interface: Capabilities encompass tender posting, bid management, winner selection.
 Supplier Interface: Offers functions for tender viewing, bid submission, bid status checking.
 Expert Interface: Provides tools for evaluating bids, providing feedback, and participating in decision-making.
-Challenges and Lessons Learned
-During the project, the team encountered challenges such as choosing the right architecture, dealing with bugs during backend development, and ensuring accurate data handling. However, these obstacles led to valuable lessons regarding the importance of planning, code quality, and teamwork.
 ﻿
 ﻿![image](https://github.com/user-attachments/assets/7c05982e-c72f-4255-9d01-28a18a892e7a)
  ![image](https://github.com/user-attachments/assets/f80c8901-34fe-44df-8990-068a83d3999b)
