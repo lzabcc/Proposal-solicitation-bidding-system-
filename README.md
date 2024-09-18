@@ -39,9 +39,12 @@ Administrator Interface: Features include user account management, tender approv
 Tender Issuer Interface: Capabilities encompass tender posting, bid management, winner selection.
 Supplier Interface: Offers functions for tender viewing, bid submission, bid status checking.
 Expert Interface: Provides tools for evaluating bids, providing feedback, and participating in decision-making.
-﻿
+
+admin home page：
 ﻿![image](https://github.com/user-attachments/assets/7c05982e-c72f-4255-9d01-28a18a892e7a)
- ![image](https://github.com/user-attachments/assets/f80c8901-34fe-44df-8990-068a83d3999b)
+
+ 
+![image](https://github.com/user-attachments/assets/f80c8901-34fe-44df-8990-068a83d3999b)
 ![image](https://github.com/user-attachments/assets/9f6579d9-04c6-4f8b-a574-0aff18cf6c50)
 ![image](https://github.com/user-attachments/assets/1b5427d9-dba7-4b53-b8e3-e60be83264b2)
 
