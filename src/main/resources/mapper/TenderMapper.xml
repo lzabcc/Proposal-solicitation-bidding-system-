@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.TenderMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.Tender">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="tender_id" jdbcType="INTEGER" property="tenderId" />
+    <result column="tenderee" jdbcType="INTEGER" property="tenderee" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="incharge" jdbcType="VARCHAR" property="incharge" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="project_type" jdbcType="VARCHAR" property="projectType" />
+    <result column="budget" jdbcType="VARCHAR" property="budget" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="attachement" jdbcType="VARCHAR" property="attachement" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="key_words" jdbcType="VARCHAR" property="keyWords" />
+    <result column="tender_no" jdbcType="VARCHAR" property="tenderNo" />
+    <result column="winner" jdbcType="INTEGER" property="winner" />
+    <result column="project_desc" jdbcType="LONGVARCHAR" property="projectDesc" />
+  </resultMap>
+  
+  <select id="searchTenders" resultMap="BaseResultMap">
+  	SELECT * FROM tender WHERE 1=1
+  	<if test="params.type!=null">
+  		AND project_type=#{params.type}
+  	</if>
+  	<if test="params.kw!=null">
+  		AND project_name LIKE CONCAT('%',#{params.kw},'%')
+  	</if>
+  	<if test="params.tenderee!=null">
+  		AND tenderee=#{params.tenderee}
+  	</if>
+  	<if test="params.status!=null">
+  		AND status=#{params.status}
+  	</if>
+  	LIMIT #{params.start},#{params.end}
+  </select>
+  
+  <select id="searchTendersCount" resultType="java.lang.Integer">
+  	SELECT COUNT(*) FROM tender WHERE 1=1
+  	<if test="params.type!=null">
+  		AND project_type=#{params.type}
+  	</if>
+  	<if test="params.kw!=null">
+  		AND project_name LIKE CONCAT('%',#{params.kw},'%')
+  	</if>
+  	<if test="params.tenderee!=null">
+  		AND tenderee=#{params.tenderee}
+  	</if>
+  	<if test="params.status!=null">
+  		AND status=#{params.status}
+  	</if>
+  </select>
+  
+  <insert id="insertTender" useGeneratedKeys="true" keyProperty="tenderId" keyColumn="tender_id" parameterType="com.example.demo.dao.model.Tender">
+  	INSERT INTO tender ( tenderee,project_name,incharge,mobile,email,project_type,budget,end_time,attachement,status,key_words,project_desc,publish_time,tender_no ) 
+  	VALUES( #{tenderee}, #{projectName}, #{incharge}, #{mobile}, #{email}, #{projectType}, #{budget}, #{endTime}, #{attachement}, #{status}, #{keyWords}, #{projectDesc}, #{publishTime}, #{tenderNo} ) 
+  </insert>
+  
+  <select id="selectConfirmTenders" resultMap="BaseResultMap">
+  	SELECT * FROM tender WHERE tenderee=#{params.entid} AND end_time &lt; #{params.now}
+  	<if test="params.type!=null">
+  		AND project_type=#{params.type}
+  	</if>
+  	<if test="params.kw!=null">
+  		AND project_name LIKE CONCAT('%',#{params.kw},'%')
+  	</if>
+  </select>
+  
+  <select id="selectTendersDay" resultMap="BaseResultMap">
+  	SELECT * FROM tender WHERE  publish_time &gt;= #{sdate} AND publish_time &lt;= #{edate} ORDER BY publish_time ASC
+  </select>
+  
+</mapper>

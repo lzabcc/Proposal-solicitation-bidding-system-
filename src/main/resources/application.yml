@@ -1,0 +1,33 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /ssm
+
+spring:
+  # 整合数据库                                      //连接数据库
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///fangan?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 1234
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+
+  # 图片上传
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 5MB
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+# 配置Mybatis的mapper文件扫描的路
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

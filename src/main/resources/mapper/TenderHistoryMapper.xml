@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.TenderHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.TenderHistory">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="tender_history_id" jdbcType="INTEGER" property="tenderHistoryId" />
+    <result column="tendering" jdbcType="INTEGER" property="tendering" />
+    <result column="tenderee" jdbcType="INTEGER" property="tenderee" />
+    <result column="bidder" jdbcType="INTEGER" property="bidder" />
+    <result column="incharge" jdbcType="VARCHAR" property="incharge" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="amount" jdbcType="VARCHAR" property="amount" />
+    <result column="tender_time" jdbcType="TIMESTAMP" property="tenderTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="attachment" jdbcType="VARCHAR" property="attachment" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+</mapper>

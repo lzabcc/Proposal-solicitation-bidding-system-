@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.ExpertMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.Expert">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="expert_id" jdbcType="INTEGER" property="expertId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="expert_title" jdbcType="VARCHAR" property="expertTitle" />
+    <result column="expert_type" jdbcType="VARCHAR" property="expertType" />
+    <result column="major" jdbcType="VARCHAR" property="major" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="birth" jdbcType="VARCHAR" property="birth" />
+    <result column="expert_desc" jdbcType="LONGVARCHAR" property="expertDesc" />
+  </resultMap>
+  
+  <select id="searchExperts" resultMap="BaseResultMap">
+  	SELECT * FROM expert WHERE 1=1
+  	<if test="params.kw!=null">
+  		AND real_name LIKE CONCAT('%',#{params.kw},'%')
+  	</if>
+  	<if test="params.type!=null">
+  		AND expert_type LIKE CONCAT('%',#{params.type},'%')
+  	</if>
+  </select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.AssessInviteMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.AssessInvite">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="assess_invite_id" jdbcType="INTEGER" property="assessInviteId" />
+    <result column="tender" jdbcType="INTEGER" property="tender" />
+    <result column="expert" jdbcType="INTEGER" property="expert" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  
+  <insert id="insertAssessInvite" useGeneratedKeys="true" keyProperty="assessInviteId" keyColumn="assess_invite_id" parameterType="com.example.demo.dao.model.AssessInvite">
+  	INSERT INTO assess_invite(tender, expert, status) VALUES(#{tender}, #{expert}, #{status})
+  </insert>
+</mapper>

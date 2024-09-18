@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.SupplierMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.Supplier">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="supplier_id" jdbcType="INTEGER" property="supplierId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="ent_name" jdbcType="VARCHAR" property="entName" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="frdb" jdbcType="VARCHAR" property="frdb" />
+    <result column="tax_code" jdbcType="VARCHAR" property="taxCode" />
+    <result column="reg_amount" jdbcType="VARCHAR" property="regAmount" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="attachment" jdbcType="VARCHAR" property="attachment" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="ent_desc" jdbcType="LONGVARCHAR" property="entDesc" />
+  </resultMap>
+  
+  <select id="searchSuppliers" resultMap="BaseResultMap">
+  	SELECT * FROM supplier WHERE 1=1
+  	<if test="params.kw!=null">
+  		AND ent_name LIKE CONCAT('%',#{params.kw},'%')
+  	</if>
+  </select>
+  
+  <insert id="insertSupplier" useGeneratedKeys="true" keyProperty="supplierId" keyColumn="supplier_id" parameterType="com.example.demo.dao.model.Supplier">
+	  INSERT INTO supplier ( user_name,ent_name,tel,email,frdb,tax_code,reg_amount,address,pwd,attachment,status,ent_desc ) 
+	  VALUES( #{userName}, #{entName}, #{tel}, #{email}, #{frdb}, #{taxCode}, #{regAmount}, #{address}, #{pwd}, #{attachment}, #{status}, #{entDesc} ) 
+  </insert>
+</mapper>

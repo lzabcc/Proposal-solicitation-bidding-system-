@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.SysMsgMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.model.SysMsg">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="sys_msg_id" jdbcType="INTEGER" property="sysMsgId" />
+    <result column="msg_time" jdbcType="TIMESTAMP" property="msgTime" />
+    <result column="msg_type" jdbcType="VARCHAR" property="msgType" />
+    <result column="alink" jdbcType="VARCHAR" property="alink" />
+    <result column="reviever" jdbcType="INTEGER" property="reviever" />
+    <result column="is_read" jdbcType="INTEGER" property="isRead" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  
+  <select id="selectAdminMsg" resultMap="BaseResultMap">
+  	SELECT * FROM sys_msg WHERE reviever=-1 
+  	<if test="msgType!=null">
+  		 AND msg_type=#{msgType}
+  	</if>
+  	ORDER BY is_read,msg_time DESC LIMIT #{start},#{end}
+  </select>
+  
+  <select id="selectMsg" resultMap="BaseResultMap">
+  	SELECT * FROM sys_msg WHERE reviever=#{uid} 
+  	<if test="msgType!=null">
+  		 AND msg_type=#{msgType}
+  	</if>
+  	ORDER BY is_read,msg_time DESC LIMIT #{start},#{end}
+  </select>
+  
+  <select id="selectTenderResult" resultMap="BaseResultMap">
+  	SELECT * FROM sys_msg WHERE reviever=#{uid} 
+  		 AND msg_type='TENDER_FAILD' OR msg_type='TENDER_SUCCESS'
+  	ORDER BY is_read,msg_time DESC LIMIT #{start},#{end}
+  </select>
+  
+  <select id="selectTenderResultCount" resultType="java.lang.Integer">
+  	SELECT COUNT(*) FROM sys_msg WHERE reviever=#{uid} 
+  		 AND msg_type='TENDER_FAILD' OR msg_type='TENDER_SUCCESS'
+  </select>
+  
+</mapper>

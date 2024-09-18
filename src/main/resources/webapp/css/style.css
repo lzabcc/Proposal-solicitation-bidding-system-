@@ -1,0 +1,87 @@
+.layui-body{
+	padding: 15px;
+}
+.layui-header .head-logo{
+	background: url("../images/logo.png");
+	background-size: 20%;
+    background-repeat: no-repeat;
+    width: 300px;
+    font-size: 20px;
+}
+.layui-footer{
+	color: #999;
+	font-size: 12px;
+}
+.head-msg .layui-nav-item a{
+	padding-right: 40px;
+}
+.layui-header .layui-layout-left{
+	left: 220px;
+}
+.bread-nav{
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	/* border-bottom: 1px solid #ccc; */
+}
+#pageview{
+
+}
+.table-meta{
+	text-align: right;
+	font-weight: bold;
+}
+.text-center{
+	text-align: center;
+}
+.layui-table th{
+	text-align: center;
+	font-weight: bold;
+}
+.pd-10{
+	padding: 10px;
+}
+.pd-5{
+	padding: 5px;
+}
+.longtxt{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 180px;
+}
+.layui-btn+.layui-btn{
+	margin-left: 0;
+}
+.layui-form-selected dl{
+	z-index: 99999;
+}
+.ssm-table .layui-table td, .layui-table th{
+	padding: 5px 6px;
+}
+.search-form{
+	width: 100%;
+	padding: 5px 0;
+}
+.icon-area{
+    width: 180px;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+.icon-area .layui-icon{
+	font-size: 36px;
+}
+.icon-area p{
+	padding: 8px 0;
+}
+.icon-area .num{
+	font-size: 40px;
+	padding-left: 10px;
+}
+.layui-table-cell{
+	text-align: center;
+}
+.layui-input-block .layui-input{
+	width: 350px;
+}
