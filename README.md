@@ -40,7 +40,6 @@ SMS Service: Tencent Cloud
 
 Roles and Responsibilities
 
-﻿
 User Interfaces and Functionality
 
 Administrator Interface: Features include user account management, tender approval, announcement posting.
