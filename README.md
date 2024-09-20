@@ -42,9 +42,13 @@ Roles and Responsibilities
 
 ﻿
 User Interfaces and Functionality
+
 Administrator Interface: Features include user account management, tender approval, announcement posting.
+
 Tender Issuer Interface: Capabilities encompass tender posting, bid management, winner selection.
+
 Supplier Interface: Offers functions for tender viewing, bid submission, bid status checking.
+
 Expert Interface: Provides tools for evaluating bids, providing feedback, and participating in decision-making.
 
 Login page
