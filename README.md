@@ -27,12 +27,19 @@ Deployment:
 Deployed the application on Alibaba Cloud, ensuring accessibility and scalability.
 
 Key Technologies Used
+
 Backend: Java (SSM Framework)
+
 Frontend: JSTL, Layui, Echart
+
 Database: MySQL
+
 Deployment: Alibaba Cloud Toolkit
+
 SMS Service: Tencent Cloud
+
 Roles and Responsibilities
+
 ﻿
 User Interfaces and Functionality
 Administrator Interface: Features include user account management, tender approval, announcement posting.
